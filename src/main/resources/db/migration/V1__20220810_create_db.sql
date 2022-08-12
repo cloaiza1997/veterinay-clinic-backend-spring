@@ -143,7 +143,8 @@ CREATE TABLE IF NOT EXISTS veterinary_clinic.workers (
     last_name character varying(255) NOT NULL,
     position_name character varying(255) NOT NULL,
     speciality character varying(255) NOT NULL,
-    document_type character(3) NOT NULL
+    document_type character(3) NOT NULL,
+    document_number integer NOT NULL
 );
 
 
