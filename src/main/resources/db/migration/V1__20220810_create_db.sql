@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS veterinary_clinic.users
     last_name character varying(255) COLLATE pg_catalog."default" NOT NULL,
     document_type character(3) COLLATE pg_catalog."default" NOT NULL,
     document_number integer NOT NULL,
-    status integer NOT NULL,
+    status integer NOT NULL DEFAULT 1,
     gender "char" NOT NULL,
     CONSTRAINT "PK_USERS" PRIMARY KEY (id),
     CONSTRAINT "UK_USERS_DOCUMENT_NUMBER" UNIQUE (document_number)
@@ -65,9 +65,13 @@ CREATE TABLE IF NOT EXISTS veterinary_clinic.clinic_histories
 (
     id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
     pet_id integer NOT NULL,
-    created_at date NOT NULL,
-    CONSTRAINT clinic_histories_pkey PRIMARY KEY (id)
-    )
+    created_at timestamp with time zone NOT NULL DEFAULT now(),
+    CONSTRAINT clinic_histories_pkey PRIMARY KEY (id),
+    CONSTRAINT "FK_CH_PET_PET_ID" FOREIGN KEY (pet_id)
+        REFERENCES veterinary_clinic.pets (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
 
     TABLESPACE pg_default;
 
