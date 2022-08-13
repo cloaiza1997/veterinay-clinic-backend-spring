@@ -23,7 +23,7 @@ import java.util.Optional;
 @RequestMapping("/worker")
 @Api("Worker")
 public class WorkerController {
-    private WorkerService workerService;
+    public WorkerService workerService;
 
     @Autowired
     private MessageSource messageSource;
@@ -122,7 +122,7 @@ public class WorkerController {
         return getRequestResponse(false, "message.worker.documentNumber.unique", null);
     }
 
-    private Response getValidationWorkerNoExists() {
+    public Response getValidationWorkerNoExists() {
         return getRequestResponse(false, "message.worker.findById.noExists", null);
     }
 

@@ -24,7 +24,7 @@ import java.util.Optional;
 @RequestMapping("/clinicHistory")
 @Api("ClinicHistory")
 public class ClinicHistoryController {
-    private ClinicHistoryService clinicHistoryService;
+    public ClinicHistoryService clinicHistoryService;
 
     @Autowired
     private MessageSource messageSource;
@@ -133,11 +133,11 @@ public class ClinicHistoryController {
         }, getMessage("message.clinicHistory.delete.error"));
     }
 
-    private Response getValidationClinicHistoryNoExists() {
+    public Response getValidationClinicHistoryNoExists() {
         return getRequestResponse(false, "message.clinicHistory.findById.noExists", null);
     }
 
-    public Response getValidationClinicHistoryPetExists() {
+    private Response getValidationClinicHistoryPetExists() {
         return getRequestResponse(false, "message.clinicHistory.petId.unique", null);
     }
 

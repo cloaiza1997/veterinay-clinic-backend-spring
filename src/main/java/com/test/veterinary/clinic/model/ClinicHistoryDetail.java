@@ -6,7 +6,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.sql.Time;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 @Data
 @Generated
@@ -32,22 +34,28 @@ public class ClinicHistoryDetail {
     @Column(name = "breathing_rate", nullable = false)
     private Double breathingRate;
 
-    @Column(name = "date_time", nullable = false)
-    private Time dateTime;
+    @Column(name = "date_time", insertable = false)
+    private Date dateTime;
 
     @Column(name = "feeding", nullable = false)
+    @NotNull(message = "{validation.clinicHistoryDetail.feeding.NotNull}")
+    @NotEmpty(message = "{validation.clinicHistoryDetail.feeding.NotNull}")
     private String feeding;
 
     @Column(name = "habitat", nullable = false)
+    @NotNull(message = "{validation.clinicHistoryDetail.habitat.NotNull}")
+    @NotEmpty(message = "{validation.clinicHistoryDetail.habitat.NotNull}")
     private String habitat;
 
     @Column(name = "observations", nullable = false)
     private String observations;
 
     @Column(name = "worker_id", nullable = false)
+    @NotNull(message = "{validation.clinicHistoryDetail.workerId.NotNull}")
     private Long workerId;
 
     @Column(name = "clinic_history_id", nullable = false)
+    @NotNull(message = "{validation.clinicHistoryDetail.clinicHistoryId.NotNull}")
     private Long clinicHistoryId;
 
     @ManyToOne

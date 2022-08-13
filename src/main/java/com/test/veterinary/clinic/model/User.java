@@ -40,7 +40,6 @@ public class User {
     private Integer documentNumber;
 
     @Column(name = "status")
-    @NotNull(message = "{validation.user.status.NotNull}")
     private Integer status;
 
     @Column(name = "gender", nullable = false)
