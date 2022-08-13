@@ -39,7 +39,7 @@ public class UserService {
     public User update(Long userId, User user) {
         Optional<User> findUser = userRepository.findById(userId);
 
-        if (findUser.isEmpty()) {
+        if (findUser.isEmpty() || userId != user.getId()) {
             return null;
         }
 
