@@ -1,8 +1,10 @@
 package com.test.veterinary.clinic.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
@@ -19,7 +21,8 @@ public class ClinicHistory {
     private Long id;
 
     @Column(name = "pet_id", nullable = false)
-    private String petId;
+    @NotNull(message = "{validation.pet.petId.NotNull}")
+    private Long petId;
 
     @Column(name = "created_at", nullable = false)
     private Date createdAt;
@@ -29,5 +32,6 @@ public class ClinicHistory {
     private Pet pet;
 
     @OneToMany(mappedBy = "clinicHistory")
+    @JsonBackReference
     private List<ClinicHistoryDetail> clinicHistoryDetails;
 }

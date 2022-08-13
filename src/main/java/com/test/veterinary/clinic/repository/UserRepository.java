@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long> {
-    @Query(nativeQuery = true, value = "SELECT * FROM users WHERE document_number = :documentNumber")
-    Optional<User> findByDocumentNumber(@Param(value = "documentNumber") Integer documentNumber);
+    @Query(nativeQuery = true, value = "SELECT * FROM users WHERE id <> :userId AND document_number = :documentNumber")
+    Optional<User> findByDocumentNumber(@Param(value = "userId") Long userId, @Param(value = "documentNumber") Integer documentNumber);
 }

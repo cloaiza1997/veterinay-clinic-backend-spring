@@ -1,7 +1,5 @@
 package com.test.veterinary.clinic.model;
 
-import org.springframework.lang.Nullable;
-
 public class Response {
     private Boolean status;
     private String message;

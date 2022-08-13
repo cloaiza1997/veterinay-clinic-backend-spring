@@ -24,7 +24,7 @@ import java.util.Optional;
 @RequestMapping("/pet")
 @Api("Pet")
 public class PetController {
-    private PetService petService;
+    public PetService petService;
 
     @Autowired
     private MessageSource messageSource;
@@ -126,7 +126,7 @@ public class PetController {
         }, getMessage("message.pet.delete.error"));
     }
 
-    private Response getValidationPetNoExists() {
+    public Response getValidationPetNoExists() {
         return getRequestResponse(false, "message.pet.findById.noExists", null);
     }
 
