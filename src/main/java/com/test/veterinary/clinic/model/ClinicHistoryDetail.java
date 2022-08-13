@@ -34,7 +34,7 @@ public class ClinicHistoryDetail {
     @Column(name = "breathing_rate", nullable = false)
     private Double breathingRate;
 
-    @Column(name = "date_time", insertable = false)
+    @Column(name = "date_time", insertable = false, updatable = false)
     private Date dateTime;
 
     @Column(name = "feeding", nullable = false)

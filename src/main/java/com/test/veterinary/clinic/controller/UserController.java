@@ -65,10 +65,10 @@ public class UserController {
     @ApiOperation(value = "User create", response = User.class)
     public ResponseEntity save(@Valid @RequestBody User user, BindingResult bindingResult) {
         return RequestResponse.executeRequestFormAction(bindingResult, (response) -> {
+            System.out.println(user);
             if (isDocumentNumberExists(user)) {
                 return getValidationDocumentNumberUnique();
             }
-
             Optional<User> newUser = Optional.ofNullable(userService.save(user));
 
             return getRequestResponse(true, "message.user.save.success", newUser);
@@ -139,6 +139,6 @@ public class UserController {
     }
 
     private Boolean isDocumentNumberExists(User user) {
-        return userService.userDocumentNumberExist(user.getId(), user.getDocumentNumber());
+        return userService.userDocumentNumberExist(user.getId() == null ? 0 : user.getId(), user.getDocumentNumber());
     }
 }

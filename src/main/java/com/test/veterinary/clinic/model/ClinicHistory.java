@@ -24,7 +24,7 @@ public class ClinicHistory {
     @NotNull(message = "{validation.pet.petId.NotNull}")
     private Long petId;
 
-    @Column(name = "created_at", insertable = false)
+    @Column(name = "created_at", insertable = false, updatable = false)
     private Date createdAt;
 
     @OneToOne
