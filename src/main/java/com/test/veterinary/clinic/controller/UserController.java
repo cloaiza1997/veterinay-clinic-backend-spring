@@ -20,7 +20,7 @@ import java.util.*;
 @RequestMapping("/user")
 @Api("User")
 public class UserController {
-    private UserService userService;
+    public UserService userService;
 
     @Autowired
     private MessageSource messageSource;
@@ -28,6 +28,9 @@ public class UserController {
     @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
+    }
+
+    public UserController() {
     }
 
     @GetMapping(path = "/")
@@ -119,7 +122,7 @@ public class UserController {
         return getRequestResponse(false, "message.user.documentNumber.unique", null);
     }
 
-    private Response getValidationUserNoExists() {
+    public Response getValidationUserNoExists() {
         return getRequestResponse(false, "message.user.findById.noExists", null);
     }
 
