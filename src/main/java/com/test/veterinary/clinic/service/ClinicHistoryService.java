@@ -17,10 +17,10 @@ public class ClinicHistoryService {
         this.clinicHistoryRepository = clinicHistoryRepository;
     }
 
-    public Boolean clinicHistoryPetExists(Long clinicHistoryId, Long petId) {
-        Optional<ClinicHistory> clinicHistory = clinicHistoryRepository.findByPetId(clinicHistoryId, petId);
+    public Boolean clinicHistoryPetExists(ClinicHistory clinicHistory) {
+        Optional<ClinicHistory> findClinicHistory = clinicHistoryRepository.findByPetId(clinicHistory.getId() == null ? -1 : clinicHistory.getId(), clinicHistory.getPetId());
 
-        return !clinicHistory.isEmpty();
+        return !findClinicHistory.isEmpty();
     }
 
     public Boolean delete(Long clinicHistoryId) {

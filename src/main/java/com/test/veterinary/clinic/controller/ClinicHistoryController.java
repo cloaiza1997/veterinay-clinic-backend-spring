@@ -154,6 +154,6 @@ public class ClinicHistoryController {
     }
 
     private Boolean isPetIdExists(ClinicHistory clinicHistory) {
-        return clinicHistoryService.clinicHistoryPetExists(clinicHistory.getId(), clinicHistory.getPetId());
+        return clinicHistoryService.clinicHistoryPetExists(clinicHistory);
     }
 }

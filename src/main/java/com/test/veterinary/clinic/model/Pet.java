@@ -39,7 +39,7 @@ public class Pet {
     private GeneralTypes.Gender gender;
 
     @Column(name = "user_id", nullable = false)
-    @NotNull(message = "{validation.worker.userId.NotNull}")
+    @NotNull(message = "{validation.pet.userId.NotNull}")
     private Long userId;
 
     @ManyToOne
