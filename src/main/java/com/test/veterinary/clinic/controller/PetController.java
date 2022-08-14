@@ -2,6 +2,7 @@ package com.test.veterinary.clinic.controller;
 
 import com.test.veterinary.clinic.helper.Messages;
 import com.test.veterinary.clinic.helper.RequestResponse;
+import com.test.veterinary.clinic.interfaces.PetInterface;
 import com.test.veterinary.clinic.model.Response;
 import com.test.veterinary.clinic.model.Pet;
 import com.test.veterinary.clinic.model.User;
@@ -42,6 +43,20 @@ public class PetController {
     public ResponseEntity findAll() {
         return RequestResponse.executeRequestAction((response) -> {
             List<Pet> pets = petService.findAll();
+
+            Map body = new HashMap();
+
+            body.put("pets", pets);
+
+            return new Response(true, null, body);
+        }, getMessage("message.pet.findAll.error"));
+    }
+
+    @GetMapping(path = "/clinicHistory")
+    @ApiOperation(value = "Pets  with clinic history", response = Pet.class)
+    public ResponseEntity findAllWithClinicHistory() {
+        return RequestResponse.executeRequestAction((response) -> {
+            List<PetInterface> pets = petService.findAllWithClinicHistory();
 
             Map body = new HashMap();
 

@@ -27,6 +27,10 @@ public class ClinicHistoryDetailService {
         return clinicHistoryDetailRepository.findAll();
     }
 
+    public List<ClinicHistoryDetail> findAllByClinicHistoryId(Long clinicHistoryId) {
+        return clinicHistoryDetailRepository.findAllByClinicHistoryId(clinicHistoryId);
+    }
+
     public Optional<ClinicHistoryDetail> findById(Long clinicHistoryDetailId) {
         return clinicHistoryDetailRepository.findById(clinicHistoryDetailId);
     }

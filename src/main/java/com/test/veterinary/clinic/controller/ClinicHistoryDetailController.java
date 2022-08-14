@@ -40,9 +40,23 @@ public class ClinicHistoryDetailController {
 
     @GetMapping(path = "/")
     @ApiOperation(value = "ClinicHistoryDetails list", response = ClinicHistoryDetail.class)
-    public ResponseEntity findAll() {
+    public ResponseEntity findAllByClinicHistoryId() {
         return RequestResponse.executeRequestAction((response) -> {
             List<ClinicHistoryDetail> clinicHistoryDetails = clinicHistoryDetailService.findAll();
+
+            Map body = new HashMap();
+
+            body.put("clinicHistoryDetails", clinicHistoryDetails);
+
+            return new Response(true, null, body);
+        }, getMessage("message.clinicHistoryDetail.findAll.error"));
+    }
+
+    @GetMapping(path = "/clinicHistory/{clinicHistoryId}")
+    @ApiOperation(value = "ClinicHistoryDetails list group by clinic history", response = ClinicHistoryDetail.class)
+    public ResponseEntity findAllByClinicHistoryId(@PathVariable(value = "clinicHistoryId") Long clinicHistoryId) {
+        return RequestResponse.executeRequestAction((response) -> {
+            List<ClinicHistoryDetail> clinicHistoryDetails = clinicHistoryDetailService.findAllByClinicHistoryId(clinicHistoryId);
 
             Map body = new HashMap();
 

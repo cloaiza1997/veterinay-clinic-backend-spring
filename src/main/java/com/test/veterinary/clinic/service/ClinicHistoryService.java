@@ -33,6 +33,7 @@ public class ClinicHistoryService {
         return clinicHistoryRepository.findAll();
     }
 
+
     public Optional<ClinicHistory> findById(Long clinicHistoryId) {
         return clinicHistoryRepository.findById(clinicHistoryId);
     }
