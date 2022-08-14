@@ -139,6 +139,6 @@ public class UserController {
     }
 
     private Boolean isDocumentNumberExists(User user) {
-        return userService.userDocumentNumberExist(user.getId() == null ? 0 : user.getId(), user.getDocumentNumber());
+        return userService.userDocumentNumberExist(user);
     }
 }

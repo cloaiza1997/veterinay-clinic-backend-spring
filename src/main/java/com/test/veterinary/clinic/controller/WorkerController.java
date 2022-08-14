@@ -139,6 +139,6 @@ public class WorkerController {
     }
 
     private Boolean isDocumentNumberExists(Worker worker) {
-        return workerService.workerDocumentNumberExist(worker.getDocumentNumber());
+        return workerService.workerDocumentNumberExist(worker);
     }
 }

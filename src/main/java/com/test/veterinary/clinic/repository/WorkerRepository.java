@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.Optional;
 
 public interface WorkerRepository extends JpaRepository<Worker, Long> {
-    @Query(nativeQuery = true, value = "SELECT * FROM workers WHERE document_number = :documentNumber")
-    Optional<Worker> findByDocumentNumber(@Param(value = "documentNumber") Integer documentNumber);
+    @Query(nativeQuery = true, value = "SELECT * FROM workers WHERE id <> :workerId AND document_number = :documentNumber")
+    Optional<Worker> findByDocumentNumber(@Param(value = "workerId") Long workerId, @Param(value = "documentNumber") Integer documentNumber);
 }

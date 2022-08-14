@@ -46,9 +46,9 @@ public class WorkerService {
         return workerRepository.save(worker);
     }
 
-    public Boolean workerDocumentNumberExist(Integer documentNumber) {
-        Optional<Worker> worker = workerRepository.findByDocumentNumber(documentNumber);
+    public Boolean workerDocumentNumberExist(Worker worker) {
+        Optional<Worker> findWorker = workerRepository.findByDocumentNumber(worker.getId() == null ? -1 : worker.getId(), worker.getDocumentNumber());
 
-        return !worker.isEmpty();
+        return !findWorker.isEmpty();
     }
 }

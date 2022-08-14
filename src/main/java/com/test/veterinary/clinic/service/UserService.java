@@ -45,9 +45,9 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public Boolean userDocumentNumberExist(Long userId, Integer documentNumber) {
-        Optional<User> user = userRepository.findByDocumentNumber(userId, documentNumber);
+    public Boolean userDocumentNumberExist(User user) {
+        Optional<User> findUser = userRepository.findByDocumentNumber(user.getId() == null ? -1 : user.getId(), user.getDocumentNumber());
 
-        return !user.isEmpty();
+        return !findUser.isEmpty();
     }
 }
