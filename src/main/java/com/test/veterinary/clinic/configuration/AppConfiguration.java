@@ -6,10 +6,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
-@Configuration
 /**
  * Clase para configuración de los archivos de los mensajes
  */
+@Configuration
 public class AppConfiguration {
     @Bean
     public MessageSource messageSource() {

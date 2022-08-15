@@ -21,6 +21,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * Controlador para gestión de mascotas
+ */
 @RestController
 @RequestMapping("/pet")
 @Api("Pet")

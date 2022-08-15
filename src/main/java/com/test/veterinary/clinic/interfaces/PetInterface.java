@@ -1,7 +1,5 @@
 package com.test.veterinary.clinic.interfaces;
 
-import com.test.veterinary.clinic.helper.GeneralTypes;
-
 public interface PetInterface {
     Long getId();
 

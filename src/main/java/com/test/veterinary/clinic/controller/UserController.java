@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.*;
 
+/**
+ * Controlador para gestión de usuarios
+ */
 @RestController
 @RequestMapping("/user")
 @Api("User")

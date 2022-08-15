@@ -20,6 +20,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * Controlador para gestión de historias clínicas
+ */
 @RestController
 @RequestMapping("/clinicHistory")
 @Api("ClinicHistory")
