@@ -8,11 +8,11 @@ Desarrollado por [Cristian Loaiza](https://cloaiza1997.github.io/CristianLoaiza/
 
 ## API
 
-()[]
+[http://44.201.226.225:8080/api/veterinary_clinic/](http://44.201.226.225:8080/api/veterinary_clinic/)
 
 ## Documentación
 
-()[]
+[http://44.201.226.225:8080/api/veterinary_clinic/swagger-ui/index.html](http://44.201.226.225:8080/api/veterinary_clinic/swagger-ui/index.html)
 
 ---
 
