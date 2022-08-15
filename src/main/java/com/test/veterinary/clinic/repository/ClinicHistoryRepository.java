@@ -8,6 +8,12 @@ import org.springframework.data.repository.query.Param;
 import java.util.Optional;
 
 public interface ClinicHistoryRepository extends JpaRepository<ClinicHistory, Long> {
+    /**
+     * Consulta si la mascota está en otra historia clínica
+     *
+     * @param clinicHistoryId
+     * @param petId
+     */
     @Query(nativeQuery = true, value = "SELECT * FROM clinic_histories WHERE id <> :clinicHistoryId AND pet_id = :petId")
     Optional<ClinicHistory> findByPetId(@Param(value = "clinicHistoryId") Long clinicHistoryId, @Param(value = "petId") Long petId);
 }

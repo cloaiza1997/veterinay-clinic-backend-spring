@@ -8,6 +8,12 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface ClinicHistoryDetailRepository extends JpaRepository<ClinicHistoryDetail, Long> {
+    /**
+     * Consulta los detalles de una historia clínica
+     *
+     * @param clinicHistoryId Id de la historia clínica para agrupar los detralles
+     * @return Listado de detalles
+     */
     @Query(nativeQuery = true, value = "SELECT * " +
             "FROM clinic_histories_detail " +
             "WHERE clinic_history_id = :clinicHistoryId " +

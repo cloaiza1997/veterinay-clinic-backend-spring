@@ -8,6 +8,11 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface PetRepository extends JpaRepository<Pet, Long> {
+    /**
+     * Consulta todas las mascotas y agrega información sobre la historia clínica y el usuario
+     *
+     * @return Listado de todas las mascotas
+     */
     @Query(nativeQuery = true, value = "SELECT " +
             "pt.id AS id, pt.name AS name, pt.gender AS gender, pt.breed AS breed, pt.user_id AS userId, " +
             "ch.id AS clinicHistoryId, us.first_name || ' ' || us.last_name AS userName " +

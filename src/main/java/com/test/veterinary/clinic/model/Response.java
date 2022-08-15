@@ -1,5 +1,8 @@
 package com.test.veterinary.clinic.model;
 
+/**
+ * Objeto con el modelo de datos de las respuesto que retorna el api
+ */
 public class Response {
     private Boolean status;
     private String message;

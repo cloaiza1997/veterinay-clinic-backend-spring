@@ -31,7 +31,6 @@ public class WorkerService {
         return workerRepository.findById(workerId);
     }
 
-
     public Worker save(Worker worker) {
         return workerRepository.save(worker);
     }
