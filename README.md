@@ -16,7 +16,7 @@ Desarrollado por [Cristian Loaiza](https://cloaiza1997.github.io/CristianLoaiza/
 
 ---
 
-![Img](repo-img/documentation.png)
+![documentation](https://user-images.githubusercontent.com/36653567/184879921-72f64c52-5b9b-4f4e-a9f2-58f5cc99acc9.png)
 
 ---
 ## Ejecución
