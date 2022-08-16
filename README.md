@@ -16,6 +16,9 @@ Desarrollado por [Cristian Loaiza](https://cloaiza1997.github.io/CristianLoaiza/
 
 ---
 
+![Img](repo-img/documentation.png)
+
+---
 ## Ejecución
 
 - Limpiar compilado
